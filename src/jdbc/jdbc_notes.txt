@@ -1,0 +1,361 @@
+Database Installation:-
+-----------------------
+
+	MYSQL
+		1) server---client windows
+
+		Java notepad--compile--run
+
+
+		2) workbench---server
+
+		java eclipse---compile/run--output
+
+
+
+JDBC:- Java Database Connectivity
+------
+
+			connect
+	Java Program------------------->Database(MySQL/ORACLE/POSTGRESS/MYSQL-SERVER)
+
+
+1) URLNAME="jdbc:mysql://localhost:3306/databaseName";
+2) DRIVERCLASS  = com.mysql.cj.jdbc.Driver
+3) USERNAME="root";
+4) PASSWORD="root";
+
+	mysql = URL = "jdbc:mysql://localhost:3306/databaseName";
+
+
+ create database 23_GENERAL3__AHM;
+
+			jdbc:mysql://localhost:3306/databaseName; 
+
+
+	 mysql-connector.jar   odbc.jar			.*jar			*.jar	
+		 |		  |			   |			  |	
+	    Driver.class    Driver.class               Driver.class            Driver.class 	
+		 |		  |			   |			  |
+		MySQL		ORACLE			POSTGRESS		MS-SQLSERVER
+
+
+
+
+
+
+
+
+
+
+
+
+
+1) DBconnection object
+
+2) create Table---Specific Database
+
+
+create 23_general3__ahm;
+
+use 23_general3__ahm;
+
+CREATE TABLE Student
+(
+	rno int AUTO_INCREMENT PRIMARY KEY,
+	name varchar(50),
+	std varchar(50),
+	marks int
+);
+
+
+JDBC:-
+------
+	1) Statement		2) PreparedStatement		3) CallableStatement
+	CRUD			CRUD				procedures,function,tirggers
+
+
+1) Statement(CRUD)		
+
+C--CREATE--insert
+R--READ---select
+U--UPDATE--update
+D--DELETE--delete
+
+
+Statement:-
+------------
+		1) executeUpdate()--[insert,update,delete]---int---rowsAffected
+
+
+	insert----Student Table
+
+
+StudentDao---Student
+
+Dao - Data Access Object
+
+
+	StudentDao---Student
+		---insert
+		---update
+		---delete
+		---select		
+
+
+
+
+
+		2) executeQuery()---[select]---ResultSet--(Multiple rows)
+
+
+
+		3) execute()---[[insert,update,delete] / [select]]	
+
+
+
+
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 13
+Server version: 8.0.30 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++----------------------+
+| Database             |
++----------------------+
+| 2023weekend1         |
+| 21javagen            |
+| 21septgen25          |
+| 22club326pm          |
+| 22gen125             |
+| 23_general3__ahm     |
+| 23gen2               |
+| aprilbatch           |
+| asheshdb             |
+| aubatch              |
+| bankmanagementsystem |
+| club32               |
+| clubjan              |
+| collagemanagement    |
+| employee             |
+| gen2                 |
+| industrybatch        |
+| information_schema   |
+| mihirnudata          |
+| mydb                 |
+| mysql                |
+| online_shopping      |
+| performance_schema   |
+| rockstar             |
+| royaldb              |
+| rpl2023              |
+| sakila               |
+| sheth                |
+| shopping-cart        |
+| sys                  |
+| tathyaocp            |
+| test                 |
+| world                |
++----------------------+
+33 rows in set (0.01 sec)
+
+mysql> use 23_general3__ahm
+Database changed
+mysql> show tables;
+Empty set (0.02 sec)
+
+mysql> CREATE TABLE Student
+    -> (
+    -> rno int AUTO_INCREMENT PRIMARY KEY,
+    -> name varchar(50),
+    -> std varchar(50),
+    -> marks int
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables;
++----------------------------+
+| Tables_in_23_general3__ahm |
++----------------------------+
+| student                    |
++----------------------------+
+1 row in set (0.00 sec)
+
+mysql> desc student;
++-------+-------------+------+-----+---------+----------------+
+| Field | Type        | Null | Key | Default | Extra          |
++-------+-------------+------+-----+---------+----------------+
+| rno   | int         | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(50) | YES  |     | NULL    |                |
+| std   | varchar(50) | YES  |     | NULL    |                |
+| marks | int         | YES  |     | NULL    |                |
++-------+-------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+
+mysql> select * from student;
++-----+-------+------+-------+
+| rno | name  | std  | marks |
++-----+-------+------+-------+
+|   1 | sagar | 12   |   100 |
++-----+-------+------+-------+
+1 row in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Database--------------------------------
+// create database databasename;
+1) create database royal;
+
+
+// use databasename;
+2) use royal;
+
+// show tables;
+3) show tables;
+
+
+// create table
+4) 
+	CREATE TABLE Employee
+	(
+		id int AUTO_INCREMENT PRIMARY KEY,
+		name varchar(30),
+		salary int
+	);
+5) SELECT * FROM Employee;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2) PreparedStatement(CRUD)
+
+
+
+
+
+
+
+
+
+
+POJO - Plain Old Java Object
+-----
+
+StudentBean----Student Table
+rno 		rno 
+name		name
+std		std
+marks		marks
+
+
+jdbc
+	--bean
+		--StudentBean
+			int rno;
+			String name;
+			String std;
+			int marks;
+	--dao
+		--StudentDao
+			---insert()
+			---update()
+			---delete()
+			---select()
+
+	--util
+		---DBConnection
+
+
+
+
+
+
+
+mysql> select rno,name,std,marks from student;
+						ArraUList list = new ArrayList();
+   1      2            3       4	
++-----+-------------+------+-------+
+| rno | name        | std  | marks |
++-----+-------------+------+-------+
+|   1 | sagar       | 12   |   100 |--new StudentBean----list
+|   3 | Ankur       | 12   |   100 |--new StudentBean----list
+|   4 | Krunal Shah | 12   |    80 |<===rs--new StudentBean----list
++-----+-------------+------+-------+
+
+
+Statement
+	1) insert
+	2) update
+	3) delete
+	4) display all records
+
+	switch---menu driven 	
+--------------------------------------------
+
+PreparedStatement
+	1) insert
+	2) update
+	3) delete
+	4) display all records
+
+
+

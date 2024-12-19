@@ -1,0 +1,235 @@
+Exception:- Exceptional things
+-----------
+https://github.com/rahulkirpekar
+Statement------1
+Statement------2
+Statement------3
+Statement------4
+Statement------5
+
+scan no1 , no2
+
+	no1 / no2----class---bind----ArithmeticException(class)--jvm--object
+							     --------------
+								   |
+							       "code-crashed"		
+Statement------6
+Statement------7
+Statement------8
+Statement------9
+Statement------10
+---------------------------------------------------------------------------------------------
+
+
+String name = null;
+
+SOP(name.length());// NullPointerException
+
+---------------------------------------------------------
+int a[] = new int[5];//A[0]..a[4]
+
+a[5] = 100;// ArrayIndexoutofBoundException
+---------------------------------------------------------
+
+//	       01234	
+String name = "royal";
+
+SOP(name.charAt(name.length()));// StringIndexoutofBoundException
+
+---------------------------------------------------------
+String value = "3243dsf3245";
+
+	  // NumberFormateException	
+int no1 = Integer.parseInt(value);//123
+---------------------------------------------------------
+			A
+			|
+		-----------------
+		|		|
+		B		C	
+
+A obj1 = new B();
+
+C obj2 = (C)obj1;// ClassCastException
+
+obj2.test();
+			Type of Exception
+			------------------
+				|
+	---------------------------------------------------------------
+	     |						|	
+	1) Checked Exception			2) UnChecked Exception
+	---------------------------		---------------------------
+	CompileTime Exception			  RunTime Exception
+	---------------------------		---------------------------
+		|					|
+	compileTime---compiler			   RunTime---JVM
+
+
+file------------->"c:\test.txt"----FileNotFoundException
+
+
+file.read();// runtime----"c:\"
+
+
+
+
+helmate---rules---accident---
+
+	 
+HOME-------------------[A-TASK]
+--------------------------------------------------------------------------------------------
+
+			Hierarchy of Exception
+			-----------------------
+				Object(Cosmic Super class)
+				  |	
+				Throwable(class)
+				  |	
+				Exception(class)
+				  |	
+	---------------------------------------------------------
+	|--checked						|--Unchecked
+FileNotFoundException					   RuntimeException(class)	
+SQLException							|
+....   						-- ArithmeticException
+						-- NullPointerException
+						-- ArrayIndexoutofBoundException
+						-- StringIndexoutofBoundException
+						-- NumberFormateException	
+						-- ClassCastException
+						-- ....
+
+
+	
+HOME---------------->TASK1------------>TASK2------------->TASK3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exception Handling:-
+----------------------
+
+
+		try
+		{
+			
+			// raise exception ===> code 
+			
+		}catch(ExceptionName e)
+		{
+			e.printStackTrack();		
+		}
+
+
+
+
+
+
+
+
+
+
+===> throw :-
+---------------
+
+===> throws:-
+---------------
+
+===> Custom Exception(User Defined Exception)
+
+
+
+===> Method Overridding With Exception:-
+----------------------------------------
+
+
+Exception Handling with Method Overriding in Java
+-----------------------------------------------------
+class A
+{
+	public void test() 
+	{
+
+	}
+}
+class B extends A
+{
+	public void test() throws Arith
+	{
+
+	}
+}
+
+
+If the superclass method does not declare an exception
+========================================================
+
+	===> subclass overridden method cannot declare the checked exception 
+	     but it can declare unchecked exception.
+
+
+If the superclass method declares an exception
+================================================
+
+	===> subclass overridden method can declare same, 
+	===> subclass exception or 
+	===> no exception 
+	===> but cannot declare parent exception.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
